@@ -1,0 +1,29 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\client\client\Assets\Scripts\Engine\GameEntity2.cs">
+    <Files>
+      <File FileName="Assets\FBManager.cs" Line="150" Column="2" />
+      <File FileName="Assets\FBTest.cs" Line="1" Column="1" />
+      <File FileName="..\client\client\Assets\Scripts\NetWork\NetWorkManager.cs" Line="238" Column="35" />
+      <File FileName="..\client\client\Assets\Scripts\Engine\GameEntity2.cs" Line="225" Column="7" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="FBManager.cs" selected="True" />
+          </Node>
+          <Node name="Assembly-CSharp-Editor" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\UnityProject\FBSDKTest\Assets\test.cs" line="109" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="..\client\client\Assets\Scripts\NetWork\NetWorkManager.cs" line="83" offsetX="333" offsetY="1394" expression="form" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>
