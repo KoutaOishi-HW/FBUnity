@@ -18,7 +18,7 @@ public class FBManager : MonoBehaviour
 
 	public Text debugLog;
 
-	//起動時の処理
+	//起動時の処理 FBSDKのInitialization
 	void Awake()
 	{
 		if(!FB.IsInitialized)
@@ -31,14 +31,14 @@ public class FBManager : MonoBehaviour
 		}
 	}
 
-	// Login処理
+	// FBログイン処理
 	public void Login()
 	{
 		var list = new List<string> {"user_birthday,user_location" };
 		FB.LogInWithReadPermissions(list,callback:OnLogIn);	
 	}
 
-	//ログイン時の処理
+	//FBログイン時の処理
 	private void OnLogIn(ILoginResult result)
 	{
 		if(FB.IsLoggedIn)
@@ -46,6 +46,7 @@ public class FBManager : MonoBehaviour
 			AccessToken token = AccessToken.CurrentAccessToken;
 			userIdText.text = token.UserId;
 
+			//ここでFBのAPIにアクセス　[me?fields=～]の～部分でフィールドを指定する　
 			FB.API("me?fields=name", Facebook.Unity.HttpMethod.GET, GetName);
 			FB.API("me?fields=birthday", Facebook.Unity.HttpMethod.GET, GetBirth);
 			FB.API("me?fields=location", Facebook.Unity.HttpMethod.GET, GetLocation);
@@ -72,7 +73,7 @@ public class FBManager : MonoBehaviour
 	{
 		DateTime birthDay = DateTime.Parse(result.ResultDictionary["birthday"].ToString());
 		userBirth.text = ToJPPattern(birthDay);
-		userAge.text = AgeCalculation(userBirth.text).ToString();
+		userAge.text = AgeCalculation(userBirth.text).ToString() + "歳";
 	}
 
 	//日付データを日本語形式に変換
@@ -103,11 +104,11 @@ public class FBManager : MonoBehaviour
 		return age;
 	}
 
-	//住所
+	//住所反映
 	void GetLocation(Facebook.Unity.IGraphResult result)
 	{
 		var loc = result.ResultDictionary["location"] as Dictionary<string,object>;
-		userAddress.text += loc["name"].ToString();
+		userAddress.text = loc["name"].ToString();
 	}
 
 	//リンクURLシェア
